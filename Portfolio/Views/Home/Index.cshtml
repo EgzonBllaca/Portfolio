@@ -19,11 +19,10 @@
 
         <div class="info">
             <h3><span>Name: </span>@fullName</h3>
-            <h3><span>Birthdate: </span>@Model.Birthdate.ToString()</h3>
+            <h3><span>Birthdate: </span>@Model.Birthdate.ToString("dd/MM/yyyy")</h3>
             <h3><span>Nationality: </span>@Model.Nationality</h3>
             <h3><span>Occupation: </span>@Model.Occupation</h3>
-            <h3><span>Nationality: </span>@Model.Nationality</h3>
-            <a href="#" class="btn">Download CV<i class="fas fa-download"></i></a>
+            <a href="~/Files/CV.pdf" download class="btn">Download CV<i class="fas fa-download"></i></a>
         </div>
 
         <div class="counter">

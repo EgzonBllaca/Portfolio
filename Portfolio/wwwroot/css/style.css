@@ -188,7 +188,7 @@ header .navbar ul li a:hover {
     .about .row .info {
         flex: 1 1 48rem;
         padding: 2rem 1rem;
-        padding-left: 6rem;
+        padding-left: 7rem;
     }
 
         .about .row .info h3 {
@@ -207,6 +207,7 @@ header .navbar ul li a:hover {
         flex: 1 1 48rem;
         display: flex;
         justify-content: center;
+        margin-right:3rem;
         flex-wrap: wrap;
     }
 
@@ -378,9 +379,6 @@ header .navbar ul li a:hover {
 
 
 
-
-
-
 /* media queries*/
 
 @media(max-width:1200px) {
@@ -408,6 +406,13 @@ header .navbar ul li a:hover {
 
     body {
         padding: 0;
+    }
+    .about .row .counter{
+        margin-right:0;
+    }
+    .about .row .info {
+        text-align: center;
+        padding-left:0;
     }
 }
 
