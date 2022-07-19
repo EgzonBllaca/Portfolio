@@ -1,0 +1,138 @@
+﻿@model Person
+@{
+    ViewData["Title"] = "Home Page";
+    var fullName = @Model.Name + " " + @Model.LastName;
+}
+<section class="home" id="home">
+
+    <h3>HI THERE!</h3>
+    <h1>I'm <span>@fullName</span></h1>
+    <p>A computer science student with the goal of becoming a renowned software engineer!</p>
+    <a href="#about" class="btn">About me<i class="fas fa-user"></i></a>
+</section>
+
+<section class="about" id="about">
+
+    <h1 class="heading"><span>About</span> me</h1>
+
+    <div class="row">
+
+        <div class="info">
+            <h3><span>Name: </span>@fullName</h3>
+            <h3><span>Birthdate: </span>@Model.Birthdate.ToString()</h3>
+            <h3><span>Nationality: </span>@Model.Nationality</h3>
+            <h3><span>Occupation: </span>@Model.Occupation</h3>
+            <h3><span>Nationality: </span>@Model.Nationality</h3>
+            <a href="#" class="btn">Download CV<i class="fas fa-download"></i></a>
+        </div>
+
+        <div class="counter">
+
+            <h1></h1>
+            <div class="box">
+                <span>Programming skills</span>
+                <ul>
+                    <li>C#</li>
+                    <li>Java</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Sql</li>
+                    <li>Kotlin</li>
+                </ul>
+            </div>
+            <div class="box">
+                <span>Hobbies</span>
+                <h3>Football & Chess</h3>
+                <h3>Cinema</h3>
+                <h3>Problem Solving</h3>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="education" id="education">
+
+    <h1 class="heading"><span>Education </span>& Training</h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2020 - Present</span>
+            <h3>Bsc. Mobile Programming and Cloud</h3>
+            <p>
+                Key subjects: Algorithms and Data Structures, OOP, Databases,
+                Software engineering, Web Programming, Mobile Programming (Android)
+            </p>
+        </div>
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2020 - 2021</span>
+            <h3>Java and mobile application development</h3>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </p>
+        </div>
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2020</span>
+            <h3>Web Development</h3>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="portfolio" id="portfolio">
+
+    <h1 class="heading">My <span>Projects </span></h1>
+
+    <div class="box-container">
+        @foreach (var project in @Model.Projects)
+        {
+            var src = $"{@project.Name}.JPG";
+            <div class="box">
+                <a href="@project.Url"> <img src=@Url.Content(String.Format("~/images/{0}", src)) alt="@project.Name" /></a>
+            </div>
+        }
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"><span>Contact </span>me </h1>
+
+    <div class="row">
+
+        <div class="content">
+
+            <h3 class="title">Contact info</h3>
+
+            <div class="info">
+
+                <h3><i class="fas fa-envelope"></i>@Model.Email</h3>
+                <h3><i class="fas fa-phone"></i>@Model.PhoneNumber</h3>
+                <h3><i class="fas fa-map-marker-alt"></i>Kosovo, Gjilan 60000</h3>
+
+            </div>
+        </div>
+
+        <form action="">
+
+            <input type="text" placeholder="Name" class="box" />
+            <input type="text" placeholder="Email" class="box" />
+            <textarea class="box message"  name="" cols="30" rows="10" placeholder="Your message..."></textarea>
+            <button type="submit" class="btn">Send <i class="fas fa-paper-plane"></i></button>
+
+        </form>
+
+    </div>
+
+</section>
